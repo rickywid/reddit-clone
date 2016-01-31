@@ -1,0 +1,3 @@
+# Redux
+
+Redux boilerplate code
