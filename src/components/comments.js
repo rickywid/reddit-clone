@@ -6,22 +6,33 @@ import { getComments } from '../actions/index';
 class Comment extends Component {
 
 	componentWillMount(){
-		this.props.getComments();
+		const url = `http://www.reddit.com/r/${this.props.params.subreddit}/comments/${this.props.params.id}/${this.props.params.title}.json`;
+		this.props.getComments(url);
 	}
 
 	renderComments(data){
+		
 		const comment = data.map(comment=>{
-			return <li>{comment.data.body}</li>
+
+			return (
+				<ul className="list-group">
+					<li className="list-group-item">{comment.data.body}</li>
+					<ul className="list-group">{comment.data.replies ? comment.data.replies.data.children.map(replies=>{
+						return (<li className="list-group-item">{replies.data.body}</li>)}) 
+						: null}
+					</ul>
+				</ul>
+			)
 		});
 
-		return comment;
+		return <div>{comment}</div>;
 	}
 
 	render(){
 		return(
-			<ul>
+			<div>
 				{this.props.comments.map(this.renderComments)}
-			</ul>
+			</div>
 		)
 	}
 }
