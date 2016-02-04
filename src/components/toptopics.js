@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-
+import moment from 'moment';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 
@@ -29,11 +29,12 @@ class ThreadsList extends Component {
 			const author = topic.data.author;
 			const num_comments = topic.data.num_comments;
 			const thumbnail = topic.data.thumbnail;
+			const time = moment(topic.data.created_utc * 1000).fromNow();
 
 			return (
 				<li className="list-group-item">
 					<h5><img src={thumbnail} className="thumb" /><Link to={permalink}>{title}</Link></h5>
-					<p>Submmitted (time) by {author} <span><Link to={permalink}>{num_comments} comments</Link></span></p>
+					<p>Submmitted {author} {time} ago <span><Link to={permalink}>{num_comments} comments</Link></span></p>
 				</li>
 			)
 		})

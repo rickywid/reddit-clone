@@ -3,7 +3,7 @@ import axios from 'axios';
 export const GET_TOPICS = 'GET_TOPICS';
 export const GET_SUBREDDIT = 'GET_SUBREDDIT';
 export const GET_COMMENTS = 'GET_COMMENTS';
-export const URL = "http://www.reddit.com/r/webdev.json";
+export const URL = "http://www.reddit.com/hot.json";
 
 
 export function searchSubReddit(subreddit){
@@ -17,7 +17,7 @@ export function searchSubReddit(subreddit){
 
 export function fetchTopics(){
 	
-	//get initial topics for front page
+	//get initial topics
 	const request = axios.get(URL);
 
 	return {

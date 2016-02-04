@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+
 import { Link } from 'react-router'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -44,12 +45,12 @@ class App extends Component {
 							</button>
 							<Link className="navbar-brand" to="/">Brand</Link>
 							<ul className="nav navbar-nav">
-								<li className="active"><a href="#">Top <span className="sr-only">(current)</span></a></li>
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">Crappy Design</a></li>
-								<li><a href="#">Web Dev</a></li>
-								<li><a href="#">Javascript</a></li>
-								<li><a href="#">ReactJS</a></li>
+								<li className="active"><Link to="/r/funny">Funny <span className="sr-only">(current)</span></Link></li>
+								<li><Link to="/r/WebDesign">Web Design</Link></li>
+								<li><Link to="/r/CrappyDesign">Crappy Design</Link></li>
+								<li><Link to="/r/webdev">Web Dev</Link></li>
+								<li><Link to="/r/javascript">Javascript</Link></li>
+								<li><Link to="/r/reactjs">ReactJS</Link></li>
 							</ul>
 						</div>
 
