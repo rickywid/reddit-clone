@@ -16,15 +16,18 @@ class SubReddit extends Component {
 
 			const title = topic.data.title;
 			const permalink = topic.data.permalink;
+			const url = topic.data.url;
 			const author = topic.data.author;
 			const num_comments = topic.data.num_comments;
 			const thumbnail = topic.data.thumbnail;
 			const time = moment(topic.data.created_utc * 1000).fromNow();
+			const domain = topic.data.domain;
 			
 			return (
 				<li className="list-group-item">
-					<h5><img src={thumbnail} className="thumb" /><Link to={permalink}>{title}</Link></h5>
-					<p>Submmitted by {author} {time} ago <span><Link to={permalink}>{num_comments} comments</Link></span></p>
+					<img src={thumbnail} className="thumb" /><h4><Link to={( domain === "self.webdev" ? permalink : url )}>{title}</Link><span className="domain">({domain})</span></h4>
+					<p className="details">Submmitted {time} by <span className="user">{author}</span> / <span className="comments"><Link to={permalink}>{num_comments} comments</Link></span></p>
+					{console.log(permalink)}
 				</li>
 				)
 			});

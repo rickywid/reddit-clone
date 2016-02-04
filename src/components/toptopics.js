@@ -33,8 +33,8 @@ class ThreadsList extends Component {
 
 			return (
 				<li className="list-group-item">
-					<h5><img src={thumbnail} className="thumb" /><Link to={permalink}>{title}</Link></h5>
-					<p>Submmitted {author} {time} ago <span><Link to={permalink}>{num_comments} comments</Link></span></p>
+					<img src={thumbnail} className="thumb" /><h4><Link to={permalink}>{title}</Link></h4>
+					<p className="details">Submmitted by <span className="user">{author}</span> {time} ago <span className="comments"><Link to={permalink}>{num_comments} comments</Link></span></p>
 				</li>
 			)
 		})
@@ -44,11 +44,9 @@ class ThreadsList extends Component {
 
 	render() {
 		return (
-			<div>
 				<ul className="list-group">
 					{this.props.data.map(this.renderList)}
 				</ul>
-			</div>
 		);
 	}
 }

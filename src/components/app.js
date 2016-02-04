@@ -37,15 +37,9 @@ class App extends Component {
 					<div className="container-fluid">
 
 						<div className="navbar-header">
-							<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span className="sr-only">Toggle navigation</span>
-								<span className="icon-bar"></span>
-								<span className="icon-bar"></span>
-								<span className="icon-bar"></span>
-							</button>
-							<Link className="navbar-brand" to="/">Brand</Link>
+							<Link className="navbar-brand" to="/">Reddit Clone</Link>
 							<ul className="nav navbar-nav">
-								<li className="active"><Link to="/r/funny">Funny <span className="sr-only">(current)</span></Link></li>
+								<li><Link to="/r/funny">Funny</Link></li>
 								<li><Link to="/r/WebDesign">Web Design</Link></li>
 								<li><Link to="/r/CrappyDesign">Crappy Design</Link></li>
 								<li><Link to="/r/webdev">Web Dev</Link></li>
@@ -60,7 +54,7 @@ class App extends Component {
 							<ul className="nav navbar-nav navbar-right">
 								<form className="navbar-form navbar-left" role="search" value={this.state.subreddit} onChange={ this.onHandleChange } onSubmit={this.onHandleSubmit} action="subreddit.js">
 									<div className="form-group">
-										<input type="text" className="form-control" placeholder="Search" />
+										<input type="text" className="form-control" placeholder="subreddit..." />
 									</div>
 									<button type="submit" className="btn btn-default">Submit</button>
 								</form>
