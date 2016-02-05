@@ -22,10 +22,11 @@ class SubReddit extends Component {
 			const thumbnail = topic.data.thumbnail;
 			const time = moment(topic.data.created_utc * 1000).fromNow();
 			const domain = topic.data.domain;
+			//const ups = topic.data.ups;
 			
 			return (
 				<li className="list-group-item">
-					<img src={thumbnail} className="thumb" /><h4><Link to={( domain === "self.webdev" ? permalink : url )}>{title}</Link><span className="domain">({domain})</span></h4>
+					<img className="thumb" src={(thumbnail === "self" || thumbnail === "default" || thumbnail === "nsfw" || thumbnail === "" ? "http://www.spotrac.com/assets/images/thumb/bluejays.png" : thumbnail)} /><h4><Link to={( domain === "self.webdev" ? permalink : url )}>{title}</Link><span className="domain">({domain})</span></h4>
 					<p className="details">Submmitted {time} by <span className="user">{author}</span> / <span className="comments"><Link to={permalink}>{num_comments} comments</Link></span></p>
 					{console.log(permalink)}
 				</li>
