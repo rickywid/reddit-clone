@@ -9,6 +9,7 @@ export default function ReducerGetTopics(state=[], action){
 			return [action.payload.data.data.children, ...state];
 
 		case GET_COMMENTS:
+					//action.payload.data
 			return [ action.payload.data[1].data.children ];
 
 		case GET_SUBREDDIT:

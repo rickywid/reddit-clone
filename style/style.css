@@ -1,3 +1,8 @@
+
+a:hover {
+	text-decoration: none;
+}
+
 .navbar-default {
 	background-color: transparent;
 	border-color: #DDE0FF;
@@ -7,6 +12,18 @@
 .navbar {
 	border-radius: 30px;
 }
+
+.navbar-default
+.navbar-nav > li > a {
+	color: #999999;
+	font-weight: bold;
+	transition: color 0.3s;
+} 
+
+.navbar-default
+.navbar-nav > li > a:hover {
+	color: #7AB1F0;
+} 
 
 .btn {
 	margin-left: 10px;
@@ -22,7 +39,7 @@
 
 .list-group-item{
 	margin-bottom: 8px;
-	border: 1px solid #ddd;
+	border: 1px solid #DDE0FF;
 	padding: 15px;
 }
 
@@ -45,4 +62,12 @@
 	font-size: 13px;
 	opacity: 0.6;
 	padding-left: 10px;
+}
+
+.top-comment {
+	background-color: rgb(234, 244, 243);
+}
+
+.nested-comment {
+	margin-left: 50px;
 }

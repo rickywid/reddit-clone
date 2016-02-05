@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { getComments } from '../actions/index';
@@ -14,13 +15,24 @@ class Comment extends Component {
 		
 		const comment = data.map(comment=>{
 
+			const author = comment.data.author;
+			const time = moment(comment.data.created_utc * 1000).fromNow();
+
 			return (
 				<ul className="list-group">
-					<li className="list-group-item">{comment.data.body}</li>
-					<ul className="list-group">{comment.data.replies ? comment.data.replies.data.children.map(replies=>{
-						return (<li className="list-group-item">{replies.data.body}</li>)}) 
-						: null}
-					</ul>
+					<li className="list-group-item top-comment">
+						<p>{comment.data.body}</p>
+						<p className="details"> Submitted {time} by <span className="user">{author}</span></p>
+						<ul className="list-group">{comment.data.replies ? comment.data.replies.data.children.map(replies=>{
+							return (
+								<li className="list-group-item nested-comment">
+									<p>{replies.data.body}</p>
+									<p className="details"> Submitted {time} by <span className="user">{author}</span></p>
+								</li>
+								)}) 
+							: null}
+						</ul>					
+					</li>
 				</ul>
 			)
 		});
@@ -29,6 +41,7 @@ class Comment extends Component {
 	}
 
 	render(){
+		//console.log(this.props.comments[0]
 		return(
 			<div>
 				{this.props.comments.map(this.renderComments)}
