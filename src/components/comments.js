@@ -6,7 +6,7 @@ import { getComments } from '../actions/index';
 
 class Comment extends Component {
 
-	componentWillMount(){
+	componentDidMount(){
 		const url = `http://www.reddit.com/r/${this.props.params.subreddit}/comments/${this.props.params.id}/${this.props.params.title}.json`;
 		this.props.getComments(url);
 	}
