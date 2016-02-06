@@ -41,10 +41,14 @@ class Comment extends Component {
 	}
 
 	render(){
-		//console.log(this.props.comments[0]
+		
 		return(
 			<div>
-				{this.props.comments.map(this.renderComments)}
+				{console.log("reducer -> return action.payload.data")}
+				{ console.log( this.props.comments[0])}
+				
+				
+				
 			</div>
 		)
 	}
