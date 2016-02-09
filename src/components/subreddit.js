@@ -7,6 +7,14 @@ import { searchSubReddit } from '../actions/index';
 import { reRenderTopics } from '../actions/index';
 
 class SubReddit extends Component { 
+	constructor(props){
+		super(props)
+		
+		this.state = { visible: false };
+		
+		this.renderList = this.renderList.bind(this);
+		this.showSelfText = this.showSelfText.bind(this);
+	}
 
 	componentDidMount(){
 		
@@ -15,6 +23,10 @@ class SubReddit extends Component {
 
 	componentWillReceiveProps(nextProps){
 		this.props.searchSubReddit(nextProps.params.subreddit)
+	}
+
+	showSelfText(){
+		this.setState({visible: !this.state.visible});
 	}
 
 	renderList(data){
@@ -28,7 +40,7 @@ class SubReddit extends Component {
 			const thumbnail = topic.data.thumbnail;
 			const time = moment(topic.data.created_utc * 1000).fromNow();
 			const domain = topic.data.domain;
-			
+			const body = topic.data.selftext;
 			//const ups = topic.data.ups;
 			
 			return (
@@ -38,7 +50,12 @@ class SubReddit extends Component {
 						<Link target ="_blank" to={( domain === "self.webdev" ? permalink : url )}>{title}</Link>
 						<span className="domain">({domain})</span>
 					</h4>
-					
+					<div className="options">
+						{ body ? <span className="glyphicon glyphicon-plus plus" onClick={this.showSelfText}></span> : "" }
+						<p className={this.state.visible ? "selftext-show" : "selftext-hide"}>
+							{ body ? body : ""}
+						</p>
+					</div>
 					<p className="details">Submmitted {time} by <span className="user">{author}</span> / <span className="comments"><Link to={permalink} target="_blank">{num_comments} comments</Link></span></p>
 					
 				</li>

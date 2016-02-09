@@ -31,6 +31,7 @@ a:hover {
 
 .thumb {
 	margin-right: 15px;
+	margin-bottom: 35px;
 	float: left;
 	height: 50px;
 	width: 50px;
@@ -83,4 +84,33 @@ a:hover {
 .root-comment {
 	background-color: white;
 	padding: 10px;
+}
+
+.selftext-hide {
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+    transition: opacity 1s;
+}
+
+.selftext-show {
+    opacity: 1;
+    height: auto;
+    transition: opacity 1s;
+}
+
+.plus {
+	padding: 5px;
+	color: #bbc1ff;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.2s color;
+}
+
+.plus:hover {
+	color: #DDE0FF;
+}
+
+.options {
+	margin: 10px;
 }
