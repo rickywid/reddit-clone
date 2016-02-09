@@ -58,7 +58,7 @@ class ThreadsList extends Component {
 							{ body ? body : ""}
 						</p>
 					</div>
-					<p className="details">Submmitted by <span className="user">{author}</span> {time} ago <span className="comments"><Link to={`reddit-clone${permalink}`}>{num_comments} comments</Link></span></p>
+					<p className="details">Submmitted by <span className="user">{author}</span> {time} ago <span className="comments"><Link to={`/reddit-clone${permalink}`}>{num_comments} comments</Link></span></p>
 				</li>
 			)
 		})
