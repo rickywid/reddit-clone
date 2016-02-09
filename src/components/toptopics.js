@@ -14,10 +14,12 @@ class ThreadsList extends Component {
 
 		this.state = { permalink: ''};
 		this.renderList = this.renderList.bind(this)
+
 	}
 
 	componentWillMount(){
-		this.props.fetchTopics();
+		console.log("======================componentdidmount toptopics======================")
+		this.props.fetchTopics();				
 	}
 
 	renderList(topics){
@@ -30,10 +32,16 @@ class ThreadsList extends Component {
 			const num_comments = topic.data.num_comments;
 			const thumbnail = topic.data.thumbnail;
 			const time = moment(topic.data.created_utc * 1000).fromNow();
+			const domain = topic.data.domain;
+			const url = topic.data. url;
 
 			return (
 				<li className="list-group-item">
-					<img className="thumb" src={(thumbnail === "self" || thumbnail === "default" || thumbnail === "nsfw" || thumbnail === "" ? "http://www.spotrac.com/assets/images/thumb/bluejays.png" : thumbnail )} className="thumb" /><h4><Link to={permalink}>{title}</Link></h4>
+					<img className="thumb" src={(thumbnail === "self" || thumbnail === "default" || thumbnail === "nsfw" || thumbnail === "" ? "http://www.spotrac.com/assets/images/thumb/bluejays.png" : thumbnail )} className="thumb" />
+					<h4>
+						<Link target ="_blank" to={( domain === "self.webdev" ? permalink : url )}>{title}</Link>
+						<span className="domain">({domain})</span>
+					</h4>
 					<p className="details">Submmitted by <span className="user">{author}</span> {time} ago <span className="comments"><Link to={permalink}>{num_comments} comments</Link></span></p>
 				</li>
 			)
@@ -44,9 +52,13 @@ class ThreadsList extends Component {
 
 	render() {
 		return (
-				<ul className="list-group">
-					{this.props.data.map(this.renderList)}
-				</ul>
+				<div>
+					<ul className="list-group">
+						{console.log("======================root======================")}
+						{console.log(this.props.data)}
+						{this.props.data.map(this.renderList)}
+					</ul>
+				</div>
 		);
 	}
 }

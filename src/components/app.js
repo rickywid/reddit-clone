@@ -21,7 +21,6 @@ class App extends Component {
 	onHandleChange(e){
 		this.setState({ subreddit: e.target.value });
 	}
-
 	onHandleSubmit(e){
 		
 		e.preventDefault();

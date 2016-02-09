@@ -30,13 +30,16 @@ a:hover {
 }
 
 .thumb {
-	height: 75px;
-	width: 75px;
-	border-radius: 10%;
 	margin-right: 15px;
 	float: left;
+	height: 50px;
+	width: 50px;
+	border-radius: 10%;
 }
 
+.list-group {
+	margin: 15px 0;
+}
 .list-group-item{
 	margin-bottom: 8px;
 	border: 1px solid #DDE0FF;
@@ -47,6 +50,7 @@ a:hover {
 .details {
 	opacity:0.6;
 	font-size: 13px;
+	margin: 0;
 }
 
 .comments {
@@ -70,4 +74,13 @@ a:hover {
 
 .nested-comment {
 	margin-left: 50px;
+}
+
+.thread-post {
+	background-color: rgb(226, 250, 229);
+}
+
+.root-comment {
+	background-color: white;
+	padding: 10px;
 }
