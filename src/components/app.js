@@ -36,14 +36,14 @@ class App extends Component {
 					<div className="container-fluid">
 
 						<div className="navbar-header">
-							<Link className="navbar-brand" to="/">Reddit Clone</Link>
+							<Link className="navbar-brand" to="/reddit-clone">Reddit Clone</Link>
 							<ul className="nav navbar-nav">
-								<li><Link to="reddit-clone/r/funny">Funny</Link></li>
-								<li><Link to="/r/WebDesign">Web Design</Link></li>
-								<li><Link to="/r/CrappyDesign">Crappy Design</Link></li>
-								<li><Link to="/r/webdev">Web Dev</Link></li>
-								<li><Link to="/r/javascript">Javascript</Link></li>
-								<li><Link to="/r/reactjs">ReactJS</Link></li>
+								<li><Link to="/reddit-clone/r/funny">Funny</Link></li>
+								<li><Link to="/reddit-clone/r/WebDesign">Web Design</Link></li>
+								<li><Link to="/reddit-clone/r/CrappyDesign">Crappy Design</Link></li>
+								<li><Link to="/reddit-clone/r/webdev">Web Dev</Link></li>
+								<li><Link to="/reddit-clone/r/javascript">Javascript</Link></li>
+								<li><Link to="/reddit-clone/r/reactjs">ReactJS</Link></li>
 							</ul>
 						</div>
 
