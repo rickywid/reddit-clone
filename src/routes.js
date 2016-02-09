@@ -6,7 +6,7 @@ import Comments from './components/comments';
 import SubReddit from './components/subreddit';
 
 export default(
-	<Route path="/" component={App} >
+	<Route path="/reddit-clone" component={App} >
 		<IndexRoute component={TopTopics} />
 		<Route path="r/:subreddit/comments/:id/:title" component={Comments} />
 		<Route path="r/:subreddit" component={SubReddit} />
