@@ -8,7 +8,7 @@ import SubReddit from './components/subreddit';
 export default(
 	<Route path="/reddit-clone" component={App} >
 		<IndexRoute component={TopTopics} />
-		<Route path="r/:subreddit" component={SubReddit} />
-		<Route path="r/:subreddit/comments/:id/:title" component={Comments} />
+		<Route path="/r/:subreddit" component={SubReddit} />
+		<Route path="/r/:subreddit/comments/:id/:title" component={Comments} />
 	</Route>
 )
