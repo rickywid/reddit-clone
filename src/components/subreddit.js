@@ -56,7 +56,7 @@ class SubReddit extends Component {
 							{ body ? body : ""}
 						</p>
 					</div>
-					<p className="details">Submmitted {time} by <span className="user">{author}</span> / <span className="comments"><Link to={permalink} target="_blank">{num_comments} comments</Link></span></p>
+					<p className="details">Submmitted {time} by <span className="user">{author}</span> / <span className="comments"><Link to={`reddit-clone${permalink}`} target="_blank">{num_comments} comments</Link></span></p>
 					
 				</li>
 				)
