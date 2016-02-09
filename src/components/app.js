@@ -25,7 +25,7 @@ class App extends Component {
 		
 		e.preventDefault();
 		this.props.searchSubReddit(this.state.subreddit)
-		window.location.href= `/r/${this.state.subreddit}`;
+		window.location.href= `/reddit-clone/r/${this.state.subreddit}`;
 		this.setState({ subreddit: ''})
 	}
 
