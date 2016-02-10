@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import { Link } from 'react-router'
 import { connect } from 'react-redux';
@@ -24,9 +25,9 @@ class App extends Component {
 	onHandleSubmit(e){
 		
 		e.preventDefault();
-		this.props.searchSubReddit(this.state.subreddit)
-		window.location.href= `/reddit-clone/r/${this.state.subreddit}`;
-		this.setState({ subreddit: ''})
+		this.props.searchSubReddit(this.state.subreddit);
+		browserHistory.push(`/reddit-clone/r/${this.state.subreddit}`);
+		this.setState({ subreddit: ''});
 	}
 
 	render() {
@@ -51,7 +52,7 @@ class App extends Component {
 						<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 							<ul className="nav navbar-nav navbar-right">
-								<form className="navbar-form navbar-left" role="search" value={this.state.subreddit} onChange={ this.onHandleChange } onSubmit={this.onHandleSubmit} action="subreddit.js">
+								<form className="navbar-form navbar-left" role="search" value={this.state.subreddit} onChange={ this.onHandleChange } onSubmit={this.onHandleSubmit} >
 									<div className="form-group">
 										<input type="text" className="form-control" placeholder="subreddit..." />
 									</div>
