@@ -4,8 +4,7 @@ import { GET_SUBREDDIT } from '../actions/index';
 import { GET_RERENDER } from '../actions/index';
 
 export default function ReducerGetTopics(state=[], action){
-	console.log(action.payload)
-	console.log(action.type)
+
 	switch(action.type){
 		case GET_TOPICS:
 			return [action.payload.data.data.children, ...state];

@@ -42,13 +42,13 @@ class ThreadsList extends Component {
 			const url = topic.data. url;
 			const subreddit = topic.data.subreddit;
 			const body = topic.data.selftext;
-			console.log(topic.data.body);
+			console.log(permalink);
 
 			return (
 				<li className="list-group-item">
 					<img className="thumb" src={(thumbnail === "self" || thumbnail === "default" || thumbnail === "nsfw" || thumbnail === "" ? "http://www.spotrac.com/assets/images/thumb/bluejays.png" : thumbnail )} className="thumb" />
 					<h4>
-						<Link target ="_blank" to={( domain === `self.${subreddit}` ? permalink : url )}>{title}</Link>
+						<Link target ="_blank" to={( domain === `self.${subreddit}` ? `/reddit-clone${permalink}`: url )}>{title}</Link>
 						<span className="domain">({domain})</span>
 					</h4>
 					<div className="options">
@@ -70,8 +70,6 @@ class ThreadsList extends Component {
 		return (
 				<div>
 					<ul className="list-group">
-						{console.log("======================root======================")}
-						{console.log(this.props.data)}
 						{this.props.data.map(this.renderList)}
 					</ul>
 				</div>

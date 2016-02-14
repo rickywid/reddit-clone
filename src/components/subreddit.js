@@ -41,7 +41,8 @@ class SubReddit extends Component {
 			const time = moment(topic.data.created_utc * 1000).fromNow();
 			const domain = topic.data.domain;
 			const body = topic.data.selftext;
-			//const ups = topic.data.ups;
+			
+			console.log(domain)
 			
 			return (
 				<li className="list-group-item">
