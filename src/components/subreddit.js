@@ -30,6 +30,7 @@ class SubReddit extends Component {
 	}
 
 	renderList(data){
+
 		const topics = data.map(topic=>{
 
 			const title = topic.data.title;
@@ -41,15 +42,18 @@ class SubReddit extends Component {
 			const time = moment(topic.data.created_utc * 1000).fromNow();
 			const domain = topic.data.domain;
 			const body = topic.data.selftext;
-			
-			console.log(domain)
-			
+			const subreddit = topic.data.subreddit;
+
+
 			return (
 				<li className="list-group-item">
 					<img className="thumb" src={(thumbnail === "self" || thumbnail === "default" || thumbnail === "nsfw" || thumbnail === "" ? "http://www.spotrac.com/assets/images/thumb/bluejays.png" : thumbnail)} />
 					<h4>
-						<Link target ="_blank" to={( domain === "self.webdev" ? permalink : url )}>{title}</Link>
+
+						{domain === `self.${subreddit}`? <Link to={`/reddit-clone${permalink}`} >{title}</Link> : <a href={url}>{title}</a> }
 						<span className="domain">({domain})</span>
+
+
 					</h4>
 					<div className="options">
 						{ body ? <span className="glyphicon glyphicon-plus plus" onClick={this.showSelfText}></span> : "" }

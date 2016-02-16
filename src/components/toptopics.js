@@ -48,7 +48,7 @@ class ThreadsList extends Component {
 				<li className="list-group-item">
 					<img className="thumb" src={(thumbnail === "self" || thumbnail === "default" || thumbnail === "nsfw" || thumbnail === "" ? "http://www.spotrac.com/assets/images/thumb/bluejays.png" : thumbnail )} className="thumb" />
 					<h4>
-						<Link to={( domain === `self.${subreddit}` ? `/reddit-clone${permalink}`: url )}>{title}</Link>
+						<a href={( domain === `self.${subreddit}` ? `/reddit-clone${permalink}`: url )}>{title}</a>
 						<span className="domain">({domain})</span>
 					</h4>
 					<div className="options">
