@@ -80,7 +80,7 @@ class Comment extends Component {
 		
 		return(
 			<div>
-				<Link to ="/reddit-clone">Home</Link>
+				<a href="/reddit-clone" className="btn btn-primary">HOME</a>
 				{console.log("comments")}
 				{this.props.comments.map(this.renderComments)}
 				
