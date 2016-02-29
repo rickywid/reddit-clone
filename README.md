@@ -1,4 +1,4 @@
-# Redux
+# Reddit-Clone
 
 Installation
 ```
