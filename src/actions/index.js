@@ -8,7 +8,7 @@ export const URL = "http://www.reddit.com/hot.json";
 
 
 export function searchSubReddit(subreddit){
-	const request = axios.get(`http://www.reddit.com/r/${subreddit}.json`)
+	const request = axios.get(`https://www.reddit.com/r/${subreddit}.json`)
 	
 	return {
 		type: GET_SUBREDDIT,
@@ -17,7 +17,7 @@ export function searchSubReddit(subreddit){
 }
 
 export function reRenderTopics(subreddit){
-	const request = axios.get(`http://www.reddit.com/r/${subreddit}.json`)
+	const request = axios.get(`https://www.reddit.com/r/${subreddit}.json`)
 	return {
 		type: GET_RERENDER,
 		payload: request
